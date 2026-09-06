@@ -4,806 +4,286 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TeachBuddy — Your English Teacher 🍎</title>
-  <meta name="description" content="Hi there! I'm TeachBuddy. No worries — I'm here to help! Learn English, become a teacher, earn certificates. 🎀">
-  <meta name="theme-color" content="#FFC6D9">
+  <meta name="description" content="Hi there! I'm TeachBuddy. No worries — I'm here to help! Learn English, earn certificates, become a teacher. 🎀">
+  <meta name="theme-color" content="#FF6B8A">
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/png" href="1000013623.png">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+  <link rel="icon" type="image/png" href="https://tapiaerica025-cell.github.io/TeachBuddy/1000013623.png">
 
-    /* ===== 🎨 BACKGROUND SYSTEM — 5 OPTIONS + AUTO-SWITCH ===== */
+  <!-- ============================================== -->
+  <!-- 🎀 WORLD-CLASS FREE CDN RESOURCES -->
+  <!-- ============================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF6B8A',
+            secondary: '#8B5CF6',
+            accent: '#3B82F6',
+            softPink: '#FDF2F7',
+            softPurple: '#F5F3FF',
+            softBlue: '#EFF6FF',
+            dark: '#1E293B',
+            graySoft: '#F8FAFC',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+            quicksand: ['Quicksand', 'sans-serif'],
+          },
+          boxShadow: {
+            'premium': '0 10px 40px -10px rgba(255, 107, 138, 0.35)',
+            'premium-lg': '0 20px 60px -15px rgba(139, 92, 246, 0.3)',
+            'glass': '0 8px 32px rgba(0, 0, 0, 0.08)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .text-balance { text-wrap: balance; }
+      .bg-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+      .bg-glass { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); }
+      .bg-glass-dark { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(20px); }
+      .gradient-primary { background: linear-gradient(135deg, #FF6B8A 0%, #FF8FA3 100%); }
+      .gradient-secondary { background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%); }
+      .gradient-hero { background: linear-gradient(135deg, #FDF2F7 0%, #F5F3FF 50%, #EFF6FF 100%); }
+      .text-gradient { background-clip: text; -webkit-background-clip: text; color: transparent; background-image: linear-gradient(135deg, #FF6B8A, #8B5CF6); }
+      .scale-hover { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+      .scale-hover:hover { transform: scale(1.03); }
+      .btn-press { transition: all 0.15s ease; }
+      .btn-press:active { transform: scale(0.97); }
+    }
+  </style>
+
+  <style>
+    * { font-family: 'Poppins', 'Quicksand', sans-serif; }
+    
     :root {
-      --bg-classroom: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
-      --bg-training: linear-gradient(135deg, #E0F2FE 0%, #DBEAFE 100%);
-      --bg-soft: linear-gradient(135deg, #FFE4EC 0%, #E0D7FF 100%);
-      --bg-cozy: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
-      --bg-minimal: linear-gradient(180deg, #FFFFFF 0%, #F3F4F6 100%);
-      
-      --pink: #FFC6D9;
-      --pink-light: #FFE4EC;
-      --lavender: #E0D7FF;
-      --blue-soft: #D7F3FF;
-      --yellow-soft: #FFF4BD;
-      --cream: #FFFAF0;
-      --text-dark: #5A4B65;
-      --text-muted: #9A8F9F;
-      --primary: #0A3370;
-      --gold: #F59E0B;
-      --shadow-soft: 0 4px 20px rgba(255, 182, 193, 0.3);
-      --shadow-glow: 0 0 20px rgba(255, 182, 193, 0.4);
+      --bg-classroom: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&q=80');
+      --bg-training: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920&q=80');
+      --bg-soft: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc806?w=1920&q=80');
+      --bg-cozy: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1920&q=80');
+      --bg-minimal: url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&q=80');
     }
 
     body {
-      background: var(--bg-classroom);
-      transition: background 0.8s ease-in-out;
-      color: var(--text-dark);
+      background-image: var(--bg-classroom);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      transition: background-image 0.8s ease-in-out;
       min-height: 100vh;
-      padding-bottom: 85px;
     }
-    body.bg-training { background: var(--bg-training); }
-    body.bg-soft { background: var(--bg-soft); }
-    body.bg-cozy { background: var(--bg-cozy); }
-    body.bg-minimal { background: var(--bg-minimal); }
+    body.bg-training { background-image: var(--bg-training); }
+    body.bg-soft { background-image: var(--bg-soft); }
+    body.bg-cozy { background-image: var(--bg-cozy); }
+    body.bg-minimal { background-image: var(--bg-minimal); }
 
-    /* ===== 🎨 BACKGROUND PICKER BUTTON ===== */
-    .bg-picker-btn {
-      position: fixed;
-      top: 15px;
-      right: 80px;
-      background: rgba(255,255,255,0.9);
-      border: none;
-      border-radius: 50px;
-      padding: 8px 14px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      box-shadow: var(--shadow-soft);
-      z-index: 101;
-      transition: all 0.3s;
+    .page-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .bg-picker-btn:hover { transform: scale(1.05); }
+    .page-section.active { opacity: 1; transform: translateY(0); }
 
-    /* ===== 🎨 BACKGROUND PICKER MODAL ===== */
-    .bg-picker-modal {
-      position: fixed;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      border-radius: 24px;
-      padding: 25px;
-      box-shadow: 0 0 50px rgba(0,0,0,0.2);
-      z-index: 501;
-      display: none;
-      max-width: 400px;
-      width: 90%;
+    @keyframes popupBounce {
+      0% { transform: scale(0.8) translateY(20px); opacity: 0; }
+      50% { transform: scale(1.05) translateY(-5px); }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
     }
-    .bg-picker-modal.active { display: block; }
-    .bg-option {
-      width: 100%;
-      height: 80px;
-      border-radius: 16px;
-      margin: 10px 0;
-      cursor: pointer;
-      border: 3px solid transparent;
-      transition: all 0.3s;
-      display: flex;
-      align-items: center;
-      padding: 0 15px;
-      font-weight: 600;
-    }
-    .bg-option:hover, .bg-option.selected {
-      border-color: var(--pink);
-      transform: scale(1.02);
-    }
-    .bg-classroom { background: var(--bg-classroom); color: var(--primary); }
-    .bg-training { background: var(--bg-training); color: #1E40AF; }
-    .bg-soft { background: var(--bg-soft); color: #7C3AED; }
-    .bg-cozy { background: var(--bg-cozy); color: #92400E; }
-    .bg-minimal { background: var(--bg-minimal); color: #374151; }
+    .popup-animate { animation: popupBounce 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
 
-    /* ===== 🎀 WELCOME POPUP — FIRST THING SEEN ===== */
-    .welcome-popup-overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 600;
-      padding: 20px;
-    }
-    .welcome-popup-overlay.hidden { display: none; }
-    .welcome-popup {
-      background: white;
-      border-radius: 28px;
-      padding: 30px 25px;
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 0 40px rgba(255, 182, 193, 0.5);
-      animation: popIn 0.5s ease-out;
-    }
-    @keyframes popIn {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    .popup-character {
-      width: 160px;
-      height: auto;
-      border-radius: 24px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow-glow);
-      border: 4px solid white;
-      animation: float 3s ease-in-out infinite;
-    }
     @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
     }
-    .popup-title {
-      font-size: 1.6rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-    .popup-text {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text-dark);
-      margin-bottom: 25px;
-    }
-    .signature-line {
-      font-weight: 700;
-      color: var(--primary);
-      font-size: 1.15rem;
-      margin: 12px 0;
-    }
-    .btn-welcome {
-      background: linear-gradient(135deg, #FF9EBB, #FFC6D9);
-      color: white;
-      border: none;
-      padding: 15px 40px;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: var(--shadow-soft);
-      transition: all 0.3s;
-    }
-    .btn-welcome:hover { transform: translateY(-3px); box-shadow: var(--shadow-glow); }
+    .float-animation { animation: float 4s ease-in-out infinite; }
 
-    /* ===== HEADER / NAVBAR ===== */
-    header {
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow-soft);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 12px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-    .logo-img {
-      width: 45px;
-      height: 45px;
-      object-fit: contain;
-      image-rendering: crisp-edges;
-      border-radius: 12px;
-    }
-    nav a {
-      color: var(--text-dark);
-      text-decoration: none;
-      margin-left: 10px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      padding: 6px 12px;
-      border-radius: 20px;
-      transition: all 0.3s;
-    }
-    nav a:hover, nav a.active {
-      background: var(--pink);
-      color: white;
-    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* ===== HERO ===== */
-    .hero {
-      padding: 40px 5%;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .branding-character {
-      width: 240px;
-      height: auto;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 20px;
-      image-rendering: crisp-edges;
-      border-radius: 24px;
-      box-shadow: var(--shadow-glow);
-      animation: float 3s ease-in-out infinite;
-      border: 4px solid white;
-    }
-    .hero h1 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      margin-bottom: 25px;
-      line-height: 1.7;
-    }
-    .btn-row {
+    /* 🎀 TALKING CHARACTER STYLES */
+    .teachbuddy-speaker {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      z-index: 50;
       display: flex;
+      align-items: flex-end;
       gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
+      max-width: calc(100% - 140px);
     }
-    .btn-primary {
-      background: linear-gradient(135deg, #FF9EBB, #FFC6D9);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      box-shadow: var(--shadow-soft);
-      transition: all 0.3s;
+    .tb-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FF6B8A, #8B5CF6);
+      padding: 3px;
+      box-shadow: 0 8px 25px rgba(255, 107, 138, 0.4);
+      flex-shrink: 0;
+      position: relative;
     }
-    .btn-primary:hover { transform: translateY(-2px); }
-    .btn-secondary {
+    .tb-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+    .tb-bubble {
       background: white;
-      color: var(--primary);
-      padding: 12px 28px;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      border: 2px solid var(--pink);
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .btn-secondary:hover { background: var(--pink-light); }
-
-    /* ===== SECTIONS ===== */
-    section {
-      max-width: 1000px;
-      margin: 0 auto 50px;
-      padding: 0 5%;
-      display: none;
-    }
-    section.active { display: block; }
-    .section-title {
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .card {
-      background: rgba(255,255,255,0.9);
-      border-radius: 24px;
-      padding: 22px;
-      margin-bottom: 18px;
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(10px);
-      transition: transform 0.2s;
-    }
-    .card:hover { transform: translateY(-2px); }
-    .card h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
-      font-size: 1.15rem;
-    }
-    .card p { color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
-    .locked-badge {
-      display: inline-block;
-      background: #E5E7EB;
-      color: #6B7280;
-      font-size: 0.75rem;
-      padding: 3px 10px;
-      border-radius: 12px;
-      margin-left: 8px;
-    }
-    .unlocked-badge {
-      display: inline-block;
-      background: #D1FAE5;
-      color: #065F46;
-      font-size: 0.75rem;
-      padding: 3px 10px;
-      border-radius: 12px;
-      margin-left: 8px;
-    }
-
-    /* ===== TABS ===== */
-    .tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .tab-btn {
-      padding: 10px 18px;
-      border-radius: 25px;
-      border: none;
-      background: white;
-      color: var(--text-dark);
-      cursor: pointer;
-      transition: all 0.3s;
-      font-weight: 500;
+      padding: 14px 18px;
+      border-radius: 22px 22px 22px 6px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      font-family: 'Poppins', sans-serif;
       font-size: 0.95rem;
+      line-height: 1.5;
+      color: #1E293B;
+      position: relative;
+      animation: bubbleFadeIn 0.4s ease-out;
+      max-width: 320px;
     }
-    .tab-btn.active {
-      background: linear-gradient(135deg, #FF9EBB, #FFC6D9);
-      color: white;
-      box-shadow: var(--shadow-soft);
-    }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
-
-    /* ===== STICKERS ===== */
-    .sticker-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
-      gap: 10px;
-      margin: 15px 0;
-    }
-    .sticker-item {
-      width: 65px;
-      height: 65px;
-      background: var(--pink-light);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      cursor: pointer;
-      transition: all 0.25s;
-      border: 2px solid transparent;
-    }
-    .sticker-item:hover {
-      transform: scale(1.15);
-      border-color: var(--pink);
-      background: white;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 16px;
-      border: 2px solid var(--pink-light);
-      background: white;
-      font-size: 1rem;
-      margin-top: 6px;
-      margin-bottom: 14px;
-      outline: none;
-      transition: border 0.3s;
-    }
-    input:focus, textarea:focus, select:focus { border-color: var(--pink); }
-    textarea { min-height: 90px; resize: vertical; }
-
-    /* ===== BOTTOM NAV ===== */
-    .bottom-nav {
-      position: fixed;
+    .tb-bubble.hidden { display: none; }
+    .tb-bubble::after {
+      content: '';
+      position: absolute;
       bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(15px);
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0;
-      box-shadow: 0 -2px 20px rgba(255, 182, 193, 0.2);
-      z-index: 99;
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
+      left: -10px;
+      width: 0; height: 0;
+      border-right: 12px solid white;
+      border-top: 12px solid transparent;
     }
-    .bottom-nav a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 0.7rem;
-      gap: 3px;
-      transition: color 0.3s;
+    @keyframes bubbleFadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
-    .bottom-nav a.active { color: var(--primary); }
-    .bottom-nav span { font-size: 1.4rem; }
-
-    /* ===== CHATBOT BUTTON ===== */
-    .chatbot-btn {
+    @keyframes speakingPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+    .tb-avatar.speaking { animation: speakingPulse 0.5s ease-in-out infinite; }
+    .tb-voice-btn {
       position: fixed;
-      bottom: 95px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
+      bottom: 100px;
+      left: 95px;
+      z-index: 51;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #FF9EBB, #FFC6D9);
+      background: white;
       border: none;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
       cursor: pointer;
-      box-shadow: var(--shadow-glow);
-      z-index: 98;
+      font-size: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 5px;
-      transition: transform 0.3s;
+      transition: all 0.2s;
     }
-    .chatbot-btn:hover { transform: scale(1.1); }
-    .chat-avatar {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      image-rendering: crisp-edges;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 1.6rem; }
-      .branding-character { width: 200px; }
-      nav { display: none; }
+    .tb-voice-btn:hover { transform: scale(1.1); }
+    @media (max-width: 640px) {
+      .teachbuddy-speaker { left: 12px; max-width: calc(100% - 100px); }
+      .tb-avatar { width: 55px; height: 55px; }
+      .tb-bubble { font-size: 0.9rem; padding: 12px 15px; max-width: 240px; }
+      .tb-voice-btn { left: 75px; bottom: 85px; width: 32px; height: 32px; }
     }
   </style>
 </head>
-<body>
+<body class="text-dark antialiased">
 
-  <!-- 🎀 WELCOME POPUP — FIRST THING EVERYONE SEES -->
-  <div class="welcome-popup-overlay" id="welcomePopup">
-    <div class="welcome-popup">
-      <img src="character.png" alt="TeachBuddy" class="popup-character">
-      <h2 class="popup-title">🎀 Welcome to TeachBuddy! 🍎</h2>
-      <div class="popup-text">
-        Hi there! I'm TeachBuddy. I'm so happy to welcome you here! ✨<br><br>
-        Are you an aspiring teacher, or are you already a private teacher who wants to find wonderful private students? 👩‍🏫<br><br>
-        Are you looking for certificates? Are you looking for excellent training to improve your CEFR level and increase your rates? 📜<br><br>
-        Would you like access to all the services here at TeachBuddy? 💛<br><br>
-        <span class="signature-line">No worries — I'm here to help! 🤝</span><br>
-        Just click the section you'd like to explore, and I'll guide you from there! 🎀
+  <!-- ============================================== -->
+  <!-- 🎀 WELCOME POPUP -->
+  <!-- ============================================== -->
+  <div id="welcomePopup" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl p-6 md:p-10 max-w-lg w-full shadow-premium-lg popup-animate relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"></div>
+      
+      <div class="relative z-10 text-center">
+        <div class="w-36 h-36 mx-auto mb-6 rounded-3xl overflow-hidden shadow-premium float-animation border-4 border-white">
+          <img src="https://tapiaerica025-cell.github.io/TeachBuddy/character.png" alt="TeachBuddy" class="w-full h-full object-cover">
+        </div>
+        
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-gradient">Welcome to TeachBuddy! 🎀</h2>
+        
+        <div class="text-gray-600 text-base md:text-lg leading-relaxed space-y-3 mb-8">
+          <p>Hi there! I'm TeachBuddy. I'm so happy to welcome you here! ✨</p>
+          <p>Are you an aspiring teacher, or already a private teacher looking for students? 👩‍🏫</p>
+          <p>Looking for certificates, training, and to improve your English? 📜</p>
+          <p class="font-semibold text-primary text-lg">No worries — I'm here to help! 🤝</p>
+        </div>
+        
+        <button onclick="closeWelcome()" class="w-full gradient-primary text-white font-semibold py-4 px-8 rounded-2xl shadow-premium hover:shadow-premium-lg scale-hover btn-press text-lg">
+          Yes, please! Let's Begin 🚀
+        </button>
       </div>
-      <button class="btn-welcome" onclick="closeWelcome()">Yes, please! Let's begin → 🎀</button>
     </div>
   </div>
 
+  <!-- ============================================== -->
   <!-- 🎨 BACKGROUND PICKER -->
-  <button class="bg-picker-btn" onclick="toggleBgPicker()">🎨 Background</button>
-  <div class="bg-picker-modal" id="bgPickerModal">
-    <h3 style="text-align:center; color:var(--primary); margin-bottom:20px;">🎨 Choose Your Background</h3>
-    <div class="bg-option bg-classroom selected" data-bg="classroom" onclick="setBg('classroom')">🏫 Classroom — Default</div>
-    <div class="bg-option bg-training" data-bg="training" onclick="setBg('training')">📚 Training Room</div>
-    <div class="bg-option bg-soft" data-bg="soft" onclick="setBg('soft')">☁️ Soft Pastel</div>
-    <div class="bg-option bg-cozy" data-bg="cozy" onclick="setBg('cozy')">🌿 Cozy Study</div>
-    <div class="bg-option bg-minimal" data-bg="minimal" onclick="setBg('minimal')">✨ Minimal White</div>
-    <button class="btn-secondary" style="width:100%; margin-top:20px;" onclick="toggleBgPicker()">Close ✕</button>
-  </div>
-
-  <!-- ===== HEADER ===== -->
-  <header>
-    <a href="#" class="nav-logo">
-      <img src="1000013623.png" alt="TeachBuddy Logo" class="logo-img">
-      <span>TeachBuddy</span>
-    </a>
-    <nav>
-      <a href="#home" class="active" onclick="showSection('home')">Home</a>
-      <a href="#learn" onclick="showSection('learn')">Learn</a>
-      <a href="#community" onclick="showSection('community')">Community</a>
-      <a href="#profile" onclick="showSection('profile')">Profile</a>
-    </nav>
-  </header>
-
-  <!-- ===== HOME SECTION ===== -->
-  <section class="active" id="home">
-    <div class="hero">
-      <img src="character.png" alt="TeachBuddy — Your English Teacher" class="branding-character">
-      <h1>Hi! I'm TeachBuddy 💛</h1>
-      <p>Your friendly English teacher and guide. No worries — I'm here to help! 🎀<br>Learn English, earn certificates, become a teacher, and grow with me!</p>
-      <div class="btn-row">
-        <button class="btn-primary" onclick="showSection('learn')">Start Learning 📚</button>
-        <button class="btn-secondary" onclick="showSection('community')">Community 💬</button>
-      </div>
-    </div>
-
-    <div style="max-width: 900px; margin: 0 auto; padding: 0 5%;">
-      <div class="card" onclick="showSection('learn')" style="cursor:pointer;">
-        <h3>📚 Learn English — All Levels</h3>
-        <p>From A1 to C2 — pronunciation, vocabulary, grammar, listening & speaking practice!</p>
-        <span class="locked-badge">🔒 Full Access — Investment Required</span>
-      </div>
-      <div class="card">
-        <h3>📜 Certificates & Training</h3>
-        <p>Earn official TeachBuddy certificates. Improve your CEFR level and increase your rates!</p>
-        <span class="locked-badge">🔒 Unlock to Access</span>
-      </div>
-      <div class="card">
-        <h3>👩‍🏫 Become a Private Teacher</h3>
-        <p>Find wonderful private students, set your rates, and grow your career!</p>
-        <span class="locked-badge">🔒 Unlock to Access</span>
-      </div>
-      <div class="card" onclick="showSection('community')" style="cursor:pointer;">
-        <h3>💬 Community & Sticker Shop</h3>
-        <p>Share, connect, use free stickers, and sell your own designs!</p>
-        <span class="unlocked-badge">✅ Free to Explore</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== LEARN SECTION ===== -->
-  <section id="learn">
-    <h2 class="section-title">📚 Learn English — CEFR Levels</h2>
-    <div class="card">
-      <h3>🟢 A1 — Beginner</h3>
-      <p>Basic words, simple sentences, introductions.</p>
-      <button class="btn-secondary">Preview →</button>
-      <span class="locked-badge">🔒 Unlock for Full Access</span>
-    </div>
-    <div class="card">
-      <h3>🟢 A2 — Elementary</h3>
-      <p>Daily phrases, simple conversations, basic grammar.</p>
-      <button class="btn-secondary">Preview →</button>
-      <span class="locked-badge">🔒 Unlock for Full Access</span>
-    </div>
-    <div class="card">
-      <h3>🟡 B1 — Intermediate</h3>
-      <p>Everyday English, opinions, travel, work topics.</p>
-      <button class="btn-secondary">Preview →</button>
-      <span class="locked-badge">🔒 Unlock for Full Access</span>
-    </div>
-    <div class="card">
-      <h3>🟡 B2 — Upper-Intermediate</h3>
-      <p>Complex sentences, debates, professional English.</p>
-      <button class="btn-secondary">Preview →</button>
-      <span class="locked-badge">🔒 Unlock for Full Access</span>
-    </div>
-    <div class="card">
-      <h3>🔴 C1 — Advanced</h3>
-      <p>Fluent expression, idioms, academic writing.</p>
-      <button class="btn-secondary">Preview →</button>
-      <span class="locked-badge">🔒 Unlock for Full Access</span>
-    </div>
-    <div class="card">
-      <h3>🔴 C2 — Proficiency</h3>
-      <p>Near-native mastery, nuance, professional excellence.</p>
-      <button class="btn-secondary">Preview →</button>
-      <span class="locked-badge">🔒 Unlock for Full Access</span>
-    </div>
-    <div class="card">
-      <h3>📄 Free Resources (PDFs with TeachBuddy Logo)</h3>
-      <p>Textbooks, worksheets, guides — all branded with your logo!</p>
-      <button class="btn-primary">Browse Resources 📂</button>
-      <span class="locked-badge">🔒 Unlock to Download</span>
-    </div>
-    <div class="card">
-      <h3>👤 Student Management & Contracts</h3>
-      <p>Add students → Auto-generate forms → Release Final Contract Agreements!</p>
-      <button class="btn-primary">Add Student 📋</button>
-    </div>
-  </section>
-
-  <!-- ===== COMMUNITY SECTION ===== -->
-  <section id="community">
-    <h2 class="section-title">💬 Community</h2>
-    <div class="tabs">
-      <button class="tab-btn active" onclick="switchTab('feed')">Feed</button>
-      <button class="tab-btn" onclick="switchTab('stickers')">🎀 Stickers</button>
-      <button class="tab-btn" onclick="switchTab('shop')">🛒 Sticker Shop</button>
-    </div>
-
-    <!-- FEED -->
-    <div class="tab-content active" id="tab-feed">
-      <div class="card">
-        <h3>Create a Post ✏️</h3>
-        <textarea id="newPostText" placeholder="Share your thoughts, progress, or anything! 💭"></textarea>
-        <div class="sticker-grid" style="margin: 8px 0;">
-          <span class="sticker-item" onclick="addStickerToPost('🎀')">🎀</span>
-          <span class="sticker-item" onclick="addStickerToPost('💛')">💛</span>
-          <span class="sticker-item" onclick="addStickerToPost('✨')">✨</span>
-          <span class="sticker-item" onclick="addStickerToPost('🌸')">🌸</span>
-          <span class="sticker-item" onclick="addStickerToPost('🦋')">🦋</span>
-          <span class="sticker-item" onclick="addStickerToPost('📚')">📚</span>
-        </div>
-        <button class="btn-primary" onclick="createPost()">Post! 🚀</button>
-      </div>
-      <div class="card">
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-          <div style="width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg, #FFC6D9, #E0D7FF); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">👩‍🏫</div>
-          <strong>TeachBuddy</strong>
-          <small style="color:var(--text-muted);">Just now</small>
-        </div>
-        <p>Welcome to our lovely community! 💛 Share your English learning journey, make friends, and have fun with cute stickers! 🎀</p>
-        <div style="font-size:2.5rem; margin:10px 0;">🎀</div>
-        <div style="display:flex; gap:20px; margin-top:12px;">
-          <button style="background:none; border:none; cursor:pointer; color:var(--text-muted);">❤️ 24</button>
-          <button style="background:none; border:none; cursor:pointer; color:var(--text-muted);">💬 Reply</button>
-          <button style="background:none; border:none; cursor:pointer; color:var(--text-muted);">🔄 Share</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- STICKERS -->
-    <div class="tab-content" id="tab-stickers">
-      <div class="card">
-        <h3>🎀 Free Cute Stickers — Click to Use! ✨</h3>
-        <p>Use these in posts, comments, and chat! All FREE! 💖</p>
-        <div class="sticker-grid">
-          <span class="sticker-item">🎀</span><span class="sticker-item">💛</span><span class="sticker-item">✨</span><span class="sticker-item">🌸</span>
-          <span class="sticker-item">🦋</span><span class="sticker-item">📚</span><span class="sticker-item">🍎</span><span class="sticker-item">💌</span>
-          <span class="sticker-item">⭐</span><span class="sticker-item">🧸</span><span class="sticker-item">🍓</span><span class="sticker-item">☁️</span>
-          <span class="sticker-item">💝</span><span class="sticker-item">🌷</span><span class="sticker-item">🐇</span><span class="sticker-item">🫶</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>🆕 Upload Your Own Stickers ✏️</h3>
-        <input type="file" id="stickerUpload" accept="image/png,image/jpg">
-        <input type="text" placeholder="Sticker Name" id="stickerName">
-        <input type="text" placeholder="Tags (comma separated)" id="stickerTags">
-        <label style="display:flex; gap:8px; align-items:center; margin:10px 0;">
-          <input type="checkbox" id="stickerPublic"> Make Public
-        </label>
-        <button class="btn-primary" onclick="saveSticker()">Save Sticker 🟢</button>
-      </div>
-    </div>
-
-    <!-- STICKER SHOP -->
-    <div class="tab-content" id="tab-shop">
-      <div class="card">
-        <h3>🛒 Sell Your Stickers! 💰</h3>
-        <p>Upload → Set Price → Earn! Proceeds go to you! 💸</p>
-        <input type="file" id="shopStickerImg" accept="image/png,image/jpg">
-        <input type="text" placeholder="Sticker Name" id="shopStickerName">
-        <textarea placeholder="Description" id="shopStickerDesc"></textarea>
-        <input type="text" placeholder="Price (e.g. 50 PHP / $1.50)" id="shopStickerPrice">
-        <button class="btn-primary" onclick="listStickerForSale()">List for Sale 🛒</button>
-      </div>
-      <div class="card">
-        <h3>📊 Your Sales Dashboard</h3>
-        <p>Total Listed: 0 | Total Earned: ₱0.00</p>
-        <button class="btn-secondary" style="width:100%;">Withdraw Funds 💳</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PROFILE SECTION ===== -->
-  <section id="profile">
-    <h2 class="section-title">👤 My Profile</h2>
-    <div class="card">
-      <h3>Edit Profile ✏️</h3>
-      <input type="text" placeholder="Your Name / Username — Editable!" id="usernameInput">
-      <input type="email" placeholder="Your Email">
-      <button class="btn-primary">Save Changes 🟢</button>
-    </div>
-    <div class="card">
-      <h3>🔐 Access Status</h3>
-      <p>Only your registered email has full free access. All other resources require investment to unlock.</p>
-      <span class="locked-badge">Standard User</span>
-    </div>
-    <div class="card">
-      <h3>⚙️ Settings</h3>
-      <p>Notifications, Email Preferences, Background & Display</p>
-      <button class="btn-secondary" onclick="showSection('home')">← Back to Home</button>
-    </div>
-  </section>
-
-  <!-- ===== CHATBOT BUTTON ===== -->
-  <button class="chatbot-btn" title="Chat with TeachBuddy 💛">
-    <img src="character.png" alt="TeachBuddy" class="chat-avatar">
+  <!-- ============================================== -->
+  <button onclick="toggleBgPicker()" class="fixed top-4 right-4 z-40 bg-glass rounded-full p-3 shadow-glass scale-hover">
+    <i class="fa-solid fa-palette text-xl text-primary"></i>
   </button>
 
-  <!-- ===== BOTTOM NAVIGATION ===== -->
-  <nav class="bottom-nav">
-    <a href="#home" class="active" onclick="showSection('home'); return false;">
-      <span>🏠</span> Home
-    </a>
-    <a href="#learn" onclick="showSection('learn'); return false;">
-      <span>📚</span> Learn
-    </a>
-    <a href="#community" onclick="showSection('community'); return false;">
-      <span>💬</span> Community
-    </a>
-    <a href="#profile" onclick="showSection('profile'); return false;">
-      <span>👤</span> Profile
-    </a>
-  </nav>
-
-  <!-- ===== JAVASCRIPT ===== -->
-  <script>
-    // 🎀 WELCOME POPUP
-    function closeWelcome() {
-      document.getElementById('welcomePopup').classList.add('hidden');
-    }
-
-    // 🎨 BACKGROUND SYSTEM
-    function toggleBgPicker() {
-      const modal = document.getElementById('bgPickerModal');
-      modal.classList.toggle('active');
-    }
-
-    function setBg(bgName) {
-      document.body.classList.remove('bg-training', 'bg-soft', 'bg-cozy', 'bg-minimal');
-      if (bgName !== 'classroom') document.body.classList.add('bg-' + bgName);
+  <div id="bgPickerModal" class="fixed inset-0 z-[90] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-3xl p-6 max-w-md w-full shadow-premium-lg">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-xl font-bold">🎨 Choose Background</h3>
+        <button onclick="toggleBgPicker()" class="text-gray-400 hover:text-gray-600 text-xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
       
-      document.querySelectorAll('.bg-option').forEach(el => el.classList.remove('selected'));
-      document.querySelector(`[data-bg="${bgName}"]`).classList.add('selected');
-      
-      localStorage.setItem('teachbuddy_bg', bgName);
-      toggleBgPicker();
-    }
+      <div class="grid grid-cols-1 gap-3">
+        <button onclick="setBg('classroom')" class="bg-softPink rounded-xl p-4 text-left font-medium hover:shadow-md transition-all border-2 border-transparent hover:border-primary bg-option" data-bg="classroom">
+          <i class="fa-solid fa-school mr-2 text-primary"></i> 🏫 Classroom — Default
+        </button>
+        <button onclick="setBg('training')" class="bg-softBlue rounded-xl p-4 text-left font-medium hover:shadow-md transition-all border-2 border-transparent hover:border-primary bg-option" data-bg="training">
+          <i class="fa-solid fa-chalkboard-teacher mr-2 text-accent"></i> 📚 Training Room
+        </button>
+        <button onclick="setBg('soft')" class="bg-softPurple rounded-xl p-4 text-left font-medium hover:shadow-md transition-all border-2 border-transparent hover:border-primary bg-option" data-bg="soft">
+          <i class="fa-solid fa-cloud mr-2 text-secondary"></i> ☁️ Soft Pastel
+        </button>
+        <button onclick="setBg('cozy')" class="bg-amber-50 rounded-xl p-4 text-left font-medium hover:shadow-md transition-all border-2 border-transparent hover:border-primary bg-option" data-bg="cozy">
+          <i class="fa-solid fa-book mr-2 text-amber-500"></i> 🌿 Cozy Study
+        </button>
+        <button onclick="setBg('minimal')" class="bg-gray-50 rounded-xl p-4 text-left font-medium hover:shadow-md transition-all border-2 border-transparent hover:border-primary bg-option" data-bg="minimal">
+          <i class="fa-solid fa-sun mr-2 text-amber-400"></i> ✨ Minimal White
+        </button>
+      </div>
+    </div>
+  </div>
 
-    // Auto-load saved background
-    const savedBg = localStorage.getItem('teachbuddy_bg');
-    if (savedBg && savedBg !== 'classroom') {
-      document.body.classList.add('bg-' + savedBg);
-      document.querySelectorAll('.bg-option').forEach(el => el.classList.remove('selected'));
-      document.querySelector(`[data-bg="${savedBg}"]`)?.classList.add('selected');
-    }
+  <!-- ============================================== -->
+  <!-- 🧭 HEADER / NAVBAR -->
+  <!-- ============================================== -->
+  <header class="sticky top-0 z-30 bg-glass border-b border-white/50">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#" onclick="showSection('home')" class="flex items-center gap-2 md:gap-3">
+          <img src="https://tapiaerica025-cell.github.io/TeachBuddy/1000013623.png" alt="TeachBuddy Logo" class="w-9 h-9 md:w-10 md:h-10 rounded-xl shadow-md">
+          <span class="font-bold text-lg md:text-xl text-gradient hidden sm:inline">TeachBuddy</span>
+        </a>
 
-    // 📄 SECTION NAVIGATION
-    function showSection(sectionId) {
-      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-      document.getElementById(sectionId).classList.add('active');
-      
-      document.querySelectorAll('header nav a, .bottom-nav a').forEach(a => a.classList.remove('active'));
-      document.querySelectorAll(`[href="#${sectionId}"]`).forEach(a => a.classList.add('active'));
-      
-      // Auto-switch background
-      if (sectionId === 'learn') {
-        document.body.classList.remove('bg-soft', 'bg-cozy', 'bg-minimal', 'bg-classroom');
-        document.body.classList.add('bg-training');
-      } else if (sectionId === 'community') {
-        document.body.classList.remove('bg-training', 'bg-cozy', 'bg-minimal', 'bg-classroom');
-        document.body.classList.add('bg-soft');
-      }
-      
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+        <nav class="hidden md:flex items-center gap-1">
+          <a href="#" onclick="showSection('home')" class="nav-link px-4 py-2 rounded-xl font-medium hover:bg-primary/10 transition-colors text-primary bg-primary/10" data-nav="home">Home</a>
+          <a href="#" onclick="showSection('learn')" class="nav-link px-4 py-2 rounded-xl font-medium hover:bg-primary/10 transition-colors text-gray-500" data-nav="learn">Learn</a>
+          <a href="#" onclick="showSection('community')" class="nav-link px-4 py-2 rounded-xl font-medium hover:bg-primary/10 transition-colors text-gray-500" data-nav="community">Community</a>
+          <a href="#" onclick="showSection('profile')" class="nav-link px-4 py-2 rounded-xl font-medium hover:bg-primary/10 transition-colors text-gray-500" data-nav="profile">Profile</a>
+        </nav>
 
-    // 📑 TABS
-    function switchTab(tabId) {
-      const parent = event.target.closest('section');
-      parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      parent.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-      event.target.classList.add('active');
-      document.getElementById('tab-' + tabId).classList.add('active');
-    }
+        <button id="mobileMenuBtn" class="md:hidden text-2xl text-dark p-2 rounded-xl hover:bg-primary/10">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
 
-    // 💬 STICKERS IN POSTS
-    function addStickerToPost(emoji) {
-      const textarea = document.getElementById('newPostText');
-      textarea.value += emoji + ' ';
-      textarea.focus();
-    }
-
-    function createPost() {
-      alert('Post created! 🎀 This is a demo — in production, this saves to the community feed! 💛');
-      document.getElementById('newPostText').value = '';
-    }
-
-    function saveSticker() {
-      alert('Sticker saved! 🎀 In production, this uploads to your sticker collection! 💛');
-    }
-
-    function listStickerForSale() {
-      alert('Sticker listed for sale! 🛒 In production, this appears in your shop! 💛');
-    }
-  </script>
-</body>
-</html>
+    <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4 py-3 flex flex-col gap-1">
+        <a href="#" onclick="showSection('home')" class="px-4 py-3 rounded-xl font-medium hover:bg-primary
