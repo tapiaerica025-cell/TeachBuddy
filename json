@@ -1,0 +1,33 @@
+{
+  "name": "TeachBuddy — Your English Teacher",
+  "short_name": "TeachBuddy",
+  "description": "Learn English with your kind young teacher! Perfect pronunciation, vocabulary, grammar & chat — all free! 🎀",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#FFF7ED",
+  "theme_color": "#0A3370",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "1000013623.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "languages", "productivity"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Start Learning",
+      "url": "index.html#learn",
+      "description": "Jump to English lessons"
+    },
+    {
+      "name": "Chat with TeachBuddy",
+      "url": "index.html#home",
+      "description": "Open AI chat"
+    }
+  ]
+}
+
