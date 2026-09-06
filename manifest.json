@@ -1,11 +1,11 @@
 {
   "name": "TeachBuddy — Your English Teacher",
   "short_name": "TeachBuddy",
-  "description": "Learn English with your kind young teacher! Perfect pronunciation, vocabulary, grammar & chat — all free! 🎀",
-  "start_url": "index.html",
+  "description": "Hi there! I'm TeachBuddy. No worries — I'm here to help! Learn English, become a teacher, earn certificates. 🎀",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#FFF7ED",
-  "theme_color": "#0A3370",
+  "background_color": "#FFE4EC",
+  "theme_color": "#FFC6D9",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -15,18 +15,22 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["education", "languages", "productivity"],
+  "categories": ["education", "productivity", "social"],
   "screenshots": [],
   "shortcuts": [
     {
-      "name": "Start Learning",
-      "url": "index.html#learn",
-      "description": "Jump to English lessons"
+      "name": "Start Learning 📚",
+      "short_name": "Learn",
+      "description": "Open English lessons",
+      "url": "./index.html#learn",
+      "icons": [{"src": "1000013623.png", "sizes": "96x966"}]
     },
     {
-      "name": "Chat with TeachBuddy",
-      "url": "index.html#home",
-      "description": "Open AI chat"
+      "name": "Community 💬",
+      "short_name": "Community",
+      "description": "Join the community",
+      "url": "./index.html#community",
+      "icons": [{"src": "1000013623.png", "sizes": "96x96"}]
     }
   ]
 }
