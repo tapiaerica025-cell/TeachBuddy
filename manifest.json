@@ -1,37 +1,42 @@
 {
   "name": "TeachBuddy — Your English Teacher",
   "short_name": "TeachBuddy",
-  "description": "Hi there! I'm TeachBuddy. No worries — I'm here to help! Learn English, become a teacher, earn certificates. 🎀",
-  "start_url": "./index.html",
+  "description": "Hi there! I'm TeachBuddy. No worries — I'm here to help! Learn English, earn certificates, become a teacher. 🎀",
+  "start_url": "/TeachBuddy/",
+  "scope": "/TeachBuddy/",
   "display": "standalone",
-  "background_color": "#FFE4EC",
-  "theme_color": "#FFC6D9",
   "orientation": "portrait-primary",
+  "background_color": "#FFC6D9",
+  "theme_color": "#FF6B8A",
+  "categories": ["education", "productivity", "lifestyle"],
   "icons": [
     {
-      "src": "1000013623.png",
+      "src": "https://tapiaerica025-cell.github.io/TeachBuddy/1000013623.png",
       "sizes": "any",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "https://tapiaerica025-cell.github.io/TeachBuddy/1000013623.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
-  "categories": ["education", "productivity", "social"],
   "screenshots": [],
   "shortcuts": [
     {
       "name": "Start Learning 📚",
       "short_name": "Learn",
-      "description": "Open English lessons",
-      "url": "./index.html#learn",
-      "icons": [{"src": "1000013623.png", "sizes": "96x966"}]
+      "description": "Begin your English lessons",
+      "url": "/TeachBuddy/#learn",
+      "icons": [{"src": "https://tapiaerica025-cell.github.io/TeachBuddy/1000013623.png", "sizes": "96x96"}]
     },
     {
       "name": "Community 💬",
       "short_name": "Community",
-      "description": "Join the community",
-      "url": "./index.html#community",
-      "icons": [{"src": "1000013623.png", "sizes": "96x96"}]
+      "description": "Join our community",
+      "url": "/TeachBuddy/#community",
+      "icons": [{"src": "https://tapiaerica025-cell.github.io/TeachBuddy/1000013623.png", "sizes": "96x96"}]
     }
   ]
 }
-
